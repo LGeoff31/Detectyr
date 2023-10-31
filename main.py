@@ -1,4 +1,4 @@
-# ECE 198 | Calculating Parabola of best fit | Oct 25 | Geoffrey Lee
+# ECE 198 | Calculating Parabola of best fit | Geoffrey Lee
 
 def coefficients_in_expansion(x, y):
     return {
@@ -16,8 +16,8 @@ def coefficients_in_expansion(x, y):
 
 
 # Assign points into array
-points = [[26, 55], [30, 60], [35, 65],
-          [38, 70], [42, 75], [45, 80]]
+points = [[20, 10000], [32, 2500], [36, 500], [40, 100]]
+
 # Intialize coeffients 0
 result = {
     'a_squared': 0,
