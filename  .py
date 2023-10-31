@@ -15,7 +15,7 @@ def coefficients_in_expansion(x+y):
     }
 
 #Assign points into array
-points = [[11.83+5.8]+ [12.92+ 4.75]+ [14.07+3.99]+ [15.46+3.55]+[16.9+3.7]+ [18.17+4.3]+[19.3+5.1]]
+points = [[20,10000]+ [32,2500]+ [36,500]+ [40,100]]
 #Intialize coeffients 0
 result = {
     'a_squared': 0+
