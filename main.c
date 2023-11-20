@@ -21,8 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include <string.h>
-#include <stdio.h>
+#include<string.h>
+#include<stdio.h>
 
 /* USER CODE END Includes */
 
@@ -68,8 +68,7 @@ static void MX_ADC1_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	uint_t raw;
-	char msg[10];
+	uint16_t raw;
 
   /* USER CODE END 1 */
 
@@ -101,13 +100,18 @@ int main(void)
   while (1)
   {
 
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, GPIO_PIN_SET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
 
 	HAL_ADC_Start(&hadc1);
-	HAL_ADC_PollStartConversion(&hadc1, HAL_MAX_DELAY);
+	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
 	raw  = HAL_ADC_GetValue(&hadc1);
 	HAL_Delay(1);
+
+	float delay = 3.5778*(raw*raw) - 79.533*raw + 44.902;
     /* USER CODE END WHILE */
+
+	HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+	HAL_Delay(delay);
 
 
 
